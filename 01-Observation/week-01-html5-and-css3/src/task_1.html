@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>College Information Portal</title>
+</head>
+<body>
+
+<!-- ==================== PART D: Semantic Header & Nav ==================== -->
+<header>
+  <h1>ANITS - College Information Portal</h1>
+  <nav>
+    <a href="#about">About</a> |
+    <a href="#students">Students</a> |
+    <a href="#register">Register</a> |
+    <a href="#media">Media</a>
+  </nav>
+</header>
+
+<!-- ==================== PART A: Basic HTML ==================== -->
+<section id="about">
+  <h2>About the College</h2>
+  <article>
+    <p>Anil Neerukonda Institute of Technology and Sciences (ANITS) is a
+    premier engineering college offering courses in Computer Science,
+    Electronics, Mechanical and more. It focuses on quality education,
+    research and placements.</p>
+
+    <h3>Text Formatting </h3>
+    <p>
+      <b>Bold Text</b> - Highlights important words.<br>
+      <i>Italic Text</i> - Used for emphasis.<br>
+      <u>Underlined Text</u> - Draws attention.<br>
+       H<sub>2</sub>O (Subscript)<br>
+       x<sup>2</sup> (Superscript)
+    </p>
+
+    <h3>Courses Offered (Ordered List)</h3>
+    <ol>
+      <li>CSE</li>
+      <li>ECE</li>
+      <li>CSM</li>
+      <li>IT</li>
+    </ol>
+
+    <h3>Facilities Available (Unordered List)</h3>
+    <ul>
+      <li>Library</li>
+      <li>Hostel</li>
+      <li>Sports Complex</li>
+      <li>Wi-Fi Campus</li>
+    </ul>
+
+    <h3>Useful Links</h3>
+    <p>
+      <a href="https://www.anits.edu.in" target="_blank">Visit College Website</a><br>
+      <a href="https://www.google.com" target="_blank">Visit Google</a>
+    </p>
+  </article>
+</section>
+
+<!-- ==================== PART B: Tables and Images ==================== -->
+<section id="students">
+  <h2>Student Details</h2>
+  <table border="1" cellpadding="8" cellspacing="0">
+    <tr>
+      <th>Roll No</th>
+      <th>Name</th>
+      <th>Branch</th>
+      <th>Email</th>
+    </tr>
+    <tr>
+      <td>A24126552122</td>
+      <td>Akshaya</td>
+      <td>CSM</td>
+      <td>teppala@anits.edu.in</td>
+    </tr>
+    <tr>
+      <td>A241265520108</td>
+      <td>Harshitha</td>
+      <td>IT</td>
+      <td>harshitha@anits.edu.in</td>
+    </tr>
+  </table>
+
+  <h3>College Logo & Campus Image</h3>
+  <img src="https://www.anits.org/ICANITS2026/assets/Images/anitslogo.jpg" alt="College Logo" width="120" height="120"> <br>
+  <img src="https://cache.careers360.mobi/media/article_images/2024/6/25/anits-visakhapatnam-management-quota.jpg" alt="ANITS Campus Building" width="300" height="200">
+</section>
+
+<!-- ==================== PART C: Registration Form ==================== -->
+<section id="register">
+  <h2>Student Registration Form</h2>
+  <form action="#" method="post">
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name" required><br><br>
+
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" required><br><br>
+
+    <label for="password">Password:</label>
+    <input type="password" id="password" name="password" required><br><br>
+
+    <label>Gender:</label>
+    <input type="radio" id="male" name="gender" value="male">
+    <label for="male">Male</label>
+    <input type="radio" id="female" name="gender" value="female">
+    <label for="female">Female</label><br><br>
+
+    <label>Hobbies:</label>
+    <input type="checkbox" id="reading" name="hobbies" value="reading">
+    <label for="reading">Reading</label>
+    <input type="checkbox" id="sports" name="hobbies" value="sports">
+    <label for="sports">Sports</label>
+    <input type="checkbox" id="coding" name="hobbies" value="coding">
+    <label for="coding">Coding</label><br><br>
+
+    <label for="branch">Branch:</label>
+    <select id="branch" name="branch">
+      <option value="cse">CSE</option>
+      <option value="ece">ECE</option>
+      <option value="csm">CSM</option>
+      <option value="it">IT</option>
+    </select><br><br>
+
+    <label for="comments">Comments:</label><br>
+    <textarea id="comments" name="comments" rows="4" cols="30"></textarea><br><br>
+
+    <!-- PART D: HTML5 Input Types -->
+    <label for="dob">Date of Birth:</label>
+    <input type="date" id="dob" name="dob"><br><br>
+
+    <label for="age">Age:</label>
+    <input type="number" id="age" name="age" min="17" max="30"><br><br>
+
+    <label for="favcolor">Favorite Color:</label>
+    <input type="color" id="favcolor" name="favcolor"><br><br>
+
+    <label for="rating">Satisfaction Level:</label>
+    <input type="range" id="rating" name="rating" min="0" max="10"><br><br>
+
+    <input type="submit" value="Submit">
+    <input type="reset" value="Reset">
+  </form>
+</section>
+
+<!-- ==================== PART D: Audio, Video, Iframe ==================== -->
+<section id="media">
+  <h2>Media Section</h2>
+
+  <h3>Audio</h3>
+  <audio controls>
+    <source src="college_anthem.mp3" type="audio/mpeg">
+    Your browser does not support the audio tag.
+  </audio>
+
+  <h3>Video</h3>
+  <video width="320" height="240" controls>
+    <source src="campus_video.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+
+  
+</section>
+
+<!-- ==================== Footer ==================== -->
+<footer>
+  <p>&copy; 2026 ANITS College Information Portal. All Rights Reserved.</p>
+</footer>
+
+</body>
+</html>
