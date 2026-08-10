@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>My Styled Webpage</title>
+<style>
+
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+  }
+
+  /* Header */
+  header {
+    background: linear-gradient(to right, #4facfe, #00f2fe);
+    color: white;
+    text-align: center;
+    padding: 25px;
+    text-shadow: 5px 2px 4px rgba(0,0,0,0.4);
+  }
+
+  header h1 {
+    font-size: 32px;
+    font-family: 'Trebuchet MS', sans-serif;
+  }
+
+  /* Navigation Bar */
+  nav {
+    background-color: #333;
+    padding: 12px;
+    text-align: center;
+  }
+
+  nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 15px;
+    font-size: 16px;
+    font-family: Verdana, sans-serif;
+  }
+
+  nav a:hover {
+    color: #00f2fe;
+    text-shadow: 1px 1px 3px black;
+  }
+
+  /* Canvas Section */
+  .canvas-section {
+    text-align: center;
+    padding: 20px;
+  }
+
+  canvas {
+    border: 1px solid #000;
+    background-color: white;
+  }
+
+  /* Content Cards */
+  .card-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 30px;
+    flex-wrap: wrap;
+  }
+
+  .card {
+    background-color: #f9f9f9;
+    border: 1px solid #ccc;
+    border-radius: 12px;
+    padding: 20px;
+    width: 220px;
+    box-shadow: 4px 4px 12px rgba(0,0,0,0.2);
+    text-align: center;
+  }
+
+  .card h3 {
+    font-family: Georgia, serif;
+    color: #333;
+  }
+
+  .card button {
+    margin-top: 10px;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 6px;
+    background-color: #4facfe;
+    color: white;
+    cursor: pointer;
+  }
+
+  .card button:hover {
+    background-color: #00c6ff;
+    box-shadow: 2px 2px 8px rgba(0,0,0,0.3);
+  }
+
+  /* Footer */
+  footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    margin-top: 20px;
+  }
+
+</style>
+</head>
+<body>
+
+<!-- Header -->
+<header>
+  <h1>My Styled Webpage</h1>
+</header>
+
+<!-- Navigation Bar -->
+<nav>
+  <a href="#">Home</a>
+  <a href="#">About</a>
+  <a href="#">Services</a>
+  <a href="#">Contact</a>
+</nav>
+
+<!-- ==================== PART A: HTML5 Canvas ==================== -->
+<div class="canvas-section">
+  <h2>Part A - HTML5 Canvas</h2>
+  <canvas id="myCanvas" width="400" height="300"></canvas>
+</div>
+
+<script>
+  const canvas = document.getElementById("myCanvas");
+  const ctx = canvas.getContext("2d");
+
+  // 1. Draw a Rectangle
+  ctx.fillStyle = "skyblue";
+  ctx.fillRect(30, 30, 120, 80);
+
+  // 2. Draw a Circle
+  ctx.beginPath();
+  ctx.arc(280, 70, 50, 0, 2 * Math.PI);
+  ctx.fillStyle = "orange";
+  ctx.fill();
+  ctx.stroke();
+
+  // 3. Draw a Line
+  ctx.beginPath();
+  ctx.moveTo(30, 180);
+  ctx.lineTo(350, 180);
+  ctx.strokeStyle = "black";
+  ctx.lineWidth = 3;
+  ctx.stroke();
+
+  // 4. Display Name as Text
+  ctx.font = "24px Arial";
+  ctx.fillStyle = "darkblue";
+  ctx.fillText("Akshaya", 130, 250);
+</script>
+
+<!-- ==================== PART B: CSS3 Styling ==================== -->
+<h2 style="text-align:center;">Part B - CSS3 Styling</h2>
+
+<div class="card-container">
+  <div class="card">
+    <h3>Card One</h3>
+    <p>This is the first content card with styling.</p>
+    <button>Learn More</button>
+  </div>
+
+  <div class="card">
+    <h3>Card Two</h3>
+    <p>This is the second content card with styling.</p>
+    <button>Learn More</button>
+  </div>
+
+  <div class="card">
+    <h3>Card Three</h3>
+    <p>This is the third content card with styling.</p>
+    <button>Learn More</button>
+  </div>
+</div>
+
+<!-- Footer -->
+<footer>
+  <p>&copy; 2026 My Styled Webpage. All Rights Reserved.</p>
+</footer>
+
+</body>
+</html>
