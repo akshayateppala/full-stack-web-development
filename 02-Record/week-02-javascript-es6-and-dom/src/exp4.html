@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title> Dynamic Webpage</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: #f3eded;
+    color: #222;
+    padding: 100px;
+  }
+
+  body.dark {
+    background-color: #0c0b0b;
+    color: #f4f4f4;
+  }
+
+  button {
+    padding: 10px 18px;
+    margin: 9px;
+    font-size: 15px;
+    border: none;
+    border-radius: 6px;
+    background-color: #c48282;
+    color: white;
+    cursor: pointer;
+  }
+
+  button:hover {
+    background-color: #af5a5a;
+  }
+
+  section {
+    max-width: 400px;
+    margin: 30px auto;
+    padding: 20px;
+    border: 2px solid #664444;
+    border-radius: 20px;
+  }
+
+  body.dark section {
+    border-color: #444;
+  }
+
+  #slideImg {
+    width: 100%;
+    max-width: 300px;
+    border-radius: 8px;
+  }
+
+  input[type="text"] {
+    padding: 8px;
+    width: 60%;
+    font-size: 15px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+  }
+
+  ul {
+    list-style: none;
+    padding: 0;
+    text-align: left;
+  }
+
+  li {
+    background: #f1f1f1;
+    color: #222;
+    padding: 8px 12px;
+    margin: 6px 0;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  li button {
+    background-color: #999;
+    padding: 3px 10px;
+    font-size: 12px;
+  }
+
+  textarea {
+    width: 90%;
+    height: 80px;
+    padding: 8px;
+    font-size: 14px;
+  }
+
+  #charCount {
+    font-size: 13px;
+    color: gray;
+  }
+</style>
+</head>
+<body>
+
+<h1> Dynamic Webpage</h1>
+
+<!-- 1. Dark mode toggle -->
+<section>
+  <h2>Theme Switch</h2>
+  <button onclick="toggleTheme()">Toggle Dark / Light Mode</button>
+</section>
+
+<!-- 2. Image slider -->
+<section>
+  <h2>Image Slider</h2>
+  <img id="slideImg" src="https://picsum.photos/id/1015/300/200" alt="Slideshow image">
+  <br>
+  <button onclick="prevImage()">Previous</button>
+  <button onclick="nextImage()">Next</button>
+</section>
+
+<!-- 3. To-do list -->
+<section>
+  <h2>Quick To-Do List</h2>
+  <input type="text" id="taskInput" placeholder="Add a task...">
+  <button onclick="addTask()">Add</button>
+  <ul id="taskList"></ul>
+</section>
+
+<!-- 4. Live character counter -->
+<section>
+  <h2>Character Counter</h2>
+  <textarea id="textArea" placeholder="Start typing..." oninput="countChars()"></textarea>
+  <p id="charCount">0 characters</p>
+</section>
+
+<script>
+  // 1. Dark mode toggle
+  function toggleTheme() {
+    document.body.classList.toggle("dark");
+  }
+
+  // 2. Image slider
+  const images = [
+    "https://picsum.photos/id/1015/300/200",
+    "https://picsum.photos/id/1025/300/200",
+    "https://picsum.photos/id/1035/300/200",
+    "https://picsum.photos/id/1041/300/200"
+  ];
+  let currentImage = 0;
+
+  function nextImage() {
+    currentImage = (currentImage + 1) % images.length;
+    document.getElementById("slideImg").src = images[currentImage];
+  }
+
+  function prevImage() {
+    currentImage = (currentImage - 1 + images.length) % images.length;
+    document.getElementById("slideImg").src = images[currentImage];
+  }
+
+  // 3. To-do list
+  function addTask() {
+    const input = document.getElementById("taskInput");
+    const taskText = input.value.trim();
+    if (taskText === "") return;
+
+    const li = document.createElement("li");
+    const span = document.createElement("span");
+    span.textContent = taskText;
+
+    const removeBtn = document.createElement("button");
+    removeBtn.textContent = "Remove";
+    removeBtn.onclick = function () {
+      li.remove();
+    };
+
+    li.appendChild(span);
+    li.appendChild(removeBtn);
+    document.getElementById("taskList").appendChild(li);
+
+    input.value = "";
+  }
+
+  // 4. Character counter
+  function countChars() {
+    const text = document.getElementById("textArea").value;
+    document.getElementById("charCount").textContent = text.length + " characters";
+  }
+</script>
+
+</body>
+</html>
