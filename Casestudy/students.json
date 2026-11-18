@@ -1,0 +1,30 @@
+[
+  {
+    "regNo": "A24126552110",
+    "name": "R. Mohini",
+    "branch": "CSM (CSE - AI & ML)",
+    "section": "B",
+    "cgpa": 9.0
+  },
+  {
+    "regNo": "A24126552115",
+    "name": "R. Varshini",
+    "branch": "CSM (CSE - AI & ML)",
+    "section": "B",
+    "cgpa": 8.9
+  },
+  {
+    "regNo": "A24126552116",
+    "name": "S. Jayvanth",
+    "branch": "CSM (CSE - AI & ML)",
+    "section": "B",
+    "cgpa": 9.1
+  },
+  {
+    "regNo": "A24126552122",
+    "name": "T. Akshaya",
+    "branch": "CSM (CSE - AI & ML)",
+    "section": "B",
+    "cgpa": 9.3
+  }
+]
